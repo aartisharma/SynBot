@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, View, TouchableOpacity, TextInput, Text, FlatList, ScrollView, Linking} from 'react-native';
+import {StyleSheet, Image, View, TouchableOpacity, Text, Linking} from 'react-native';
 import docxIcon from "../../../../common/images/docxIcon.png";
 
 const CapabilityDetailedcomp = ({item}) => {

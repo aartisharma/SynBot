@@ -7,7 +7,6 @@ const LoginScreenComp = (props) => {
     const onEmailIdChanged = props.onEmailIdChanged;
     const onLoginDone = props.onLoginDone;
 
-
     return (
         <View style={styles.backgroundStyle}>
             <Image

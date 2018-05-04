@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, View, TouchableOpacity, TextInput, Text, FlatList, ScrollView, Linking} from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 
 const ButtonCompBubble = ({item,suggestSiblingAction}) => {
     return (

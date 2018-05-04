@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-    StyleSheet, Image, View, TouchableOpacity, TextInput, Text, FlatList, ScrollView, WebView,
-    Linking
+    StyleSheet, Image, View, TouchableOpacity, Text, Linking
 } from 'react-native';
 import explorerIcon from "../../../../common/images/chrome.png";
 

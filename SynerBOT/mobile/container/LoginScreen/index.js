@@ -4,8 +4,6 @@ import LoginScreenComp from '../../component/LoginScreen';
 import * as authActionCreator from '../../../common/action/auth';
 import {bindActionCreators} from 'redux';
 
-import {NavigationActions} from "react-navigation";
-
 class LoginScreen extends React.Component {
     constructor(props) {
         super(props);

@@ -1,13 +1,7 @@
 import React from 'react';
-import {Linking, StyleSheet, Text, View, TouchableOpacity,Image,FlatList} from 'react-native';
-import docxIcon from "../../../../common/images/docxIcon.png";
-import HTMLView from 'react-native-htmlview';
-//var HTMLView = require('react-native-htmlview');
-import bubbleStyle from "../../../../common/style";
-import _ from 'lodash';
+import {StyleSheet, Text, View,FlatList} from 'react-native';
 import CapabilityDetailedcomp from "../../../../common/component/BubbleComponents/CapabilityDetailedcomp"
 import CapabilityBlogComponent from "../../../../common/component/BubbleComponents/CapabilityBlogComponent"
-import ButtonCompBubble from "../../../../common/component/BubbleComponents/ButtonCompBubble"
 const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
     return (
 

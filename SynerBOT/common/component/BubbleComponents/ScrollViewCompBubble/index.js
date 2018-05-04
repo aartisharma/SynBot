@@ -1,8 +1,7 @@
 import React from 'react';
-import {StyleSheet, Image, View, TouchableOpacity, TextInput,Text,FlatList, ScrollView,Linking} from 'react-native';
+import {StyleSheet, Image, View, TouchableOpacity,Text, ScrollView,Linking} from 'react-native';
 import rightArrow from '../../../../common/images/rightArrow.png'
 import linkedinIcon from '../../../../common/images/linkedinIcon.jpg'
-import userIcon from '../../../../common/images/userIcon.png'
 
 const ScrollViewCompBubble = ({item}) => {
 const WIDTH = 300

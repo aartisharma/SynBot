@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, View, TouchableOpacity, TextInput,Text,FlatList, ScrollView} from 'react-native';
+import {StyleSheet, View, TextInput,Text} from 'react-native';
 
 import ScrollViewCompBubble from '../../../common/component/BubbleComponents/ScrollViewCompBubble';
 import ButtonCompBubble from '../../../common/component/BubbleComponents/ButtonCompBubble';

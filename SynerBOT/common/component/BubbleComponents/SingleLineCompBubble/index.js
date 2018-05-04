@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Image, View, TouchableOpacity, TextInput,Text,FlatList, ScrollView} from 'react-native';
+import {StyleSheet, View,Text} from 'react-native';
 
 const SingleLineCompBubble = ({item}) => {
     return (

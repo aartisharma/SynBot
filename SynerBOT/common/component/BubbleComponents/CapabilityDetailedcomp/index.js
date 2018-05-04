@@ -8,10 +8,12 @@ const CapabilityDetailedcomp = ({item}) => {
             <TouchableOpacity style={{fontSize:15,fontWeight:'bold',paddingLeft:10,paddingTop:10}} onPress={() => Linking.openURL(item.url)}>
                 <Image style={{width:35,height:35}} source={docxIcon} />
             </TouchableOpacity>
-            <Text style={{color: '#148CFF', padding:8,backgroundColor:'transparent',flex: 1, flexWrap: 'wrap', justifyContent:'center',alignSelf:'center'}}>
-                {item.fileName}
-            </Text>
-        </View>
+            <TouchableOpacity style={{fontSize:15,fontWeight:'bold',paddingLeft:10,paddingTop:10}} onPress={() => Linking.openURL(item.url)}>
+                <Text style={{color: '#148CFF', padding:8,backgroundColor:'transparent',flex: 1, flexWrap: 'wrap', justifyContent:'center',alignSelf:'center'}}>
+                    {item.fileName}
+                </Text>
+            </TouchableOpacity>
+         </View>
     )
 }
 

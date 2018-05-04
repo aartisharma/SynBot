@@ -20,7 +20,7 @@ const AreaCapabilityBubbleComponent = ({item}) => {
                               data={item.content.answer.projects}
                               renderItem={({item}) =>
                                   <View>
-                                      <Text style={{color: '#148CFF', padding:11,backgroundColor:'transparent',flex: 1, flexWrap: 'wrap'}}>
+                                      <Text style={{color: 'black', padding:15,backgroundColor:'transparent',flex: 1, flexWrap: 'wrap'}}>
                                           {item}</Text>
                                   </View>
 

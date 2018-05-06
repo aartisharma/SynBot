@@ -4,11 +4,6 @@ import {StyleSheet, View,Text} from 'react-native';
 const DefaultBubble = ({item}) => {
     return (
             <View style = {styles.receiverBubbleBackgroundContainerStyle}>
-                <View style={{
-                    flexDirection: 'row',
-                    marginTop: 10
-                }}>
-                    <View style={styles.receiverBubbleContainerStyle}>
                         {
                             item.content.answer.map((data) => {
                                 return(
@@ -18,9 +13,7 @@ const DefaultBubble = ({item}) => {
                                 )
                             })
                         }
-                    </View>
-                </View>
-            </View>:null
+               </View>:null
     )
 }
 
@@ -30,35 +23,13 @@ const styles = StyleSheet.create({
         left: 0,
         width: '90%',
         alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        backgroundColor: '#f7f7f7',
-    },
-    senderBubbleBackgroundContainerStyle: {
-        top: 0,
-        left: 0,
-        width: '100%',
-        alignItems: 'flex-end',
-        justifyContent: 'flex-start',
-        backgroundColor: '#f7f7f7',
-    },
+        justifyContent: 'center',
+        backgroundColor: '#F8E71C',
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 5,
+        borderRadius: 20
 
-    receiverBubbleContainerStyle:{
-        flex: -1,
-        marginLeft: 5,
-        marginRight: 5,
-        justifyContent:'center',
-        backgroundColor: '#F8E71C',
-        borderRadius: 20,
-        // padding: 10
-    },
-    senderBubbleContainerStyle:{
-        flex: -1,
-        marginLeft: 5,
-        marginRight: 5,
-        justifyContent:'center',
-        backgroundColor: '#F8E71C',
-        borderRadius: 20,
-        padding: 10,
     }
 });
 export default DefaultBubble;

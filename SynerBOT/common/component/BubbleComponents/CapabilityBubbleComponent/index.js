@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View,FlatList} from 'react-native';
 import CapabilityDetailedcomp from "../../../../common/component/BubbleComponents/CapabilityDetailedcomp"
-import CapabilityBlogComponent from "../../../../common/component/BubbleComponents/CapabilityBlogComponent"
 const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
     return (
 
@@ -36,10 +35,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                                         <View style={{paddingLeft: 10, paddingTop: 10}}>
                                                             <Text style={{fontWeight: 'bold'}}>{data[0].type}</Text>
                                                         </View>
-                                                        {
-
-                                                            data[0].type.toLowerCase() == 'experience reports' ?
-                                                                <FlatList style={{
+                                                        <FlatList style={{
                                                                     width: '100%',
                                                                     backgroundColor: 'white',
                                                                     borderBottomLeftRadius: 19,
@@ -50,22 +46,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                                                           renderItem={({item}) =>
                                                                               <CapabilityDetailedcomp
                                                                                   item={item}/>
-                                                                          }/> :
-                                                                <FlatList style={{
-                                                                    width: '100%',
-                                                                    backgroundColor: 'white',
-                                                                    borderBottomLeftRadius: 19,
-                                                                    borderBottomRightRadius: 19,
-                                                                    margin: 1
-                                                                }}
-                                                                                          data={data}
-                                                                                          renderItem={({item}) =>
-                                                                                              <CapabilityBlogComponent
-                                                                                                  item={item}/>
-                                                                                          }/>
-
-                                                        }
-
+                                                                          }/>
                                                     </View>
                                                 )
                                             })

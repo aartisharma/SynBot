@@ -1,15 +1,17 @@
 import React from 'react';
 import {StyleSheet, Image, View, TouchableOpacity, Text, Linking} from 'react-native';
 import docxIcon from "../../../../common/images/docxIcon.png";
+import explorerIcon from "../../../../common/images/chrome.png";
+
 
 const CapabilityDetailedcomp = ({item}) => {
     return (
         <View style = {styles.receiverCapabilityDetailedcompContainerStyle}>
             <TouchableOpacity style={styles.docxIconStyle} onPress={() => Linking.openURL(item.url)}>
-                <Image style={{width:35,height:35}} source={docxIcon} />
+                <Image style={{width:35,height:35}} source={ item.type.toLowerCase() == 'experience reports'?docxIcon:explorerIcon} />
             </TouchableOpacity>
-            <TouchableOpacity style = {styles.docxIconStyle} onPress={() => Linking.openURL(item.url)}>
-                <Text style={styles.fileNameTextStyle}>
+            <TouchableOpacity style={{fontSize:15,fontWeight:'bold',paddingLeft:10,paddingTop:10, width:'85%'}} onPress={() => Linking.openURL(item.url)}>
+                <Text style={{color: '#148CFF', padding:8,backgroundColor:'transparent',flex: 1,flexWrap: 'wrap'}}>
                     {item.fileName}
                 </Text>
             </TouchableOpacity>

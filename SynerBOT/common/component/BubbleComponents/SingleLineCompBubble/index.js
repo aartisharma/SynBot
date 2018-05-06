@@ -16,8 +16,7 @@ const SingleLineCompBubble = ({item}) => {
                 </View>
             </View>
         </View>:null
-
-    )
+   )
 }
 
 const styles = StyleSheet.create({
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         backgroundColor: '#F8E71C',
         borderRadius: 20,
-        // padding: 10
     },
     senderBubbleContainerStyle:{
         flex: -1,

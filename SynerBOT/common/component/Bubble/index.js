@@ -14,7 +14,7 @@ const Bubble = ({item,suggestSiblingAction}) => {
           <View>
                 {
                     item.content.intent == "definition"?
-                        item.content.response_code == "ontology_response_code"?
+                        item.content.response_code == "ontology_response_code" ||item.content.response_code == "not_recognized_code" ?
                             <SingleLineCompBubble
                                 item = {item}/> :<DefaultBubble item = {item}/> :
                         item.content.intent =="buttonComponent"?

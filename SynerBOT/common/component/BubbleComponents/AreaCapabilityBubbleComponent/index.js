@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View,FlatList} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 const AreaCapabilityBubbleComponent = ({item}) => {
     return (
@@ -12,7 +12,7 @@ const AreaCapabilityBubbleComponent = ({item}) => {
                     <View style={{padding:10}}>
                         <Text>{item.content.details} </Text>
                     </View>
-                    <FlatList style={{width: '100%', backgroundColor: '#f7f7f7',borderBottomLeftRadius:19,borderBottomRightRadius:19}}
+                    <FlatList style={styles.projectsFlatListStyle}
                               data={item.content.answer.projects}
                               renderItem={({item}) =>
                                   <View>
@@ -43,10 +43,16 @@ const styles = StyleSheet.create({
         marginRight: 5,
         justifyContent: 'center',
         backgroundColor: '#F8E71C',
-        borderWidth:1,
-        borderColor:'#F8E71C',
+        borderWidth: 1,
+        borderColor: '#F8E71C',
         borderRadius: 20,
         padding: 1
+    },
+    projectsFlatListStyle: {
+        width: '100%',
+        backgroundColor: '#f7f7f7',
+        borderBottomLeftRadius: 19,
+        borderBottomRightRadius: 19
     }
 });
 export default AreaCapabilityBubbleComponent;

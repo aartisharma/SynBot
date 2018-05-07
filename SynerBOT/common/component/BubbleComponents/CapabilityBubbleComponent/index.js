@@ -5,12 +5,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
     return (
 
         <View style={styles.receiverBubbleBackgroundContainerStyle}>
-            <View style={{
-                flexDirection: 'row',
-                marginTop: 10
-            }}>
-                        <View style={styles.receiverBubbleContainerStyle}>
-                            <View style={{padding:10}}>
+                            <View style={{padding:10,width:'100%'}}>
                                 <Text>{item.content.details} </Text>
                             </View>
                             {
@@ -20,7 +15,8 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                         flexDirection: 'column',
                                         backgroundColor: 'white',
                                         borderBottomLeftRadius: 19,
-                                        borderBottomRightRadius: 19
+                                        borderBottomRightRadius: 19,
+                                        width:'100%'
                                     }}>
                                         {
                                             item.content.answer.map((data) => {
@@ -32,11 +28,11 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                                             backgroundColor: 'white'
                                                         }}>
                                                         </View>
-                                                        <View style={{paddingLeft: 10, paddingTop: 10}}>
+                                                        <View style={{ width: '100%',paddingLeft: 10, paddingTop: 10}}>
                                                             <Text style={{fontWeight: 'bold'}}>{data[0].type}</Text>
                                                         </View>
                                                         <FlatList style={{
-                                                                    width: '100%',
+                                                                    width: '99%',
                                                                     backgroundColor: 'white',
                                                                     borderBottomLeftRadius: 19,
                                                                     borderBottomRightRadius: 19,
@@ -55,9 +51,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                     </View>:null
                             }
                         </View>
-            </View>
-        </View>
-      )
+            )
 }
 
 const styles = StyleSheet.create({
@@ -66,20 +60,15 @@ const styles = StyleSheet.create({
         left: 0,
         width: '90%',
         alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        backgroundColor: '#f7f7f7',
-    },
-
-    receiverBubbleContainerStyle: {
-        flex: -1,
-        marginLeft: 5,
-        marginRight: 5,
         justifyContent: 'center',
         backgroundColor: '#F8E71C',
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 5,
         borderWidth:1,
         borderColor:'#F8E71C',
         borderRadius: 20,
         padding: 1
-    }
+ },
 });
 export default CapabilityBubbleComponent;

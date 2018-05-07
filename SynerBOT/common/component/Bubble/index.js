@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         backgroundColor: '#f7f7f7',
         },
-
     receiverBubbleContainerStyle:{
         flex: -1,
         marginLeft: 5,
@@ -94,7 +93,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         backgroundColor: '#F8E71C',
         borderRadius: 20,
-       // padding: 10
     },
     senderBubbleContainerStyle:{
         flex: -1,

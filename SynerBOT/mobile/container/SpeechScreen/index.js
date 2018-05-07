@@ -259,13 +259,13 @@ class SpeechScreen extends React.Component {
     }
 
     onVoiceStart(){
-        window.clearTimeout(this.timer);
-        this._startRecognizing()
-        this.props.speechResultsAction.onListeningStart()
-        this.timer = setTimeout(() => {
-            this.props.speechResultsAction.onListeningStop()
-            this._cancelRecognizing()
-        }, 3000);
+        if (this.state.isListening === false) {
+            this.props.speechResultsAction.onListeningStatusChanged(true)
+            this._startRecognizing()
+        } else {
+            this.props.speechResultsAction.onListeningStatusChanged(false)
+                this._cancelRecognizing()
+            }
       }
 
     onSend() {

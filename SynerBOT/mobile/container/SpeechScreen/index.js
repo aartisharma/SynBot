@@ -35,6 +35,7 @@ class SpeechScreen extends React.Component {
         }
 
         this.onMessageChange = this.onMessageChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         this.onTextInputFocus = this.onTextInputFocus.bind(this);
         this.onSend = this.onSend.bind(this);
         this.onVoiceStart = this.onVoiceStart.bind(this);
@@ -249,7 +250,7 @@ class SpeechScreen extends React.Component {
 
     onTextInputFocus(value){
         this.props.speechResultsAction.onTypingStart()
-}
+    }
 
     suggestSiblingAction(item) {
         var messageArray = this.props.speechResults.message;
@@ -270,8 +271,6 @@ class SpeechScreen extends React.Component {
 
     onSend() {
         window.clearTimeout(this.timer);
-        this.props.speechResultsAction.onTypingEnd()
-
         this.setState({ messages:{
                 userID: 2,
                  content:
@@ -294,10 +293,13 @@ class SpeechScreen extends React.Component {
         });
      }
 
+    onSubmit(){
+        this.props.speechResultsAction.onTypingEnd()
+    }
+
     onStartSpeech(){
         console.log("longPress")
-
-    }
+     }
 
   render() {
         return(
@@ -312,6 +314,7 @@ class SpeechScreen extends React.Component {
                 onStartSpeech = {this.onStartSpeech}
                 isListening = {this.state.isListening}
                 isTyping = {this.state.isTyping}
+                onSubmit = {this.onSubmit}
             />
         )
     }

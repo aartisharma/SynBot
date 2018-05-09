@@ -36,6 +36,7 @@ const SpeechScreen = (props) => {
                     returnKeyType="done"
                     blurOnSubmit={true}
                     autoCapitalize= "none"
+                    onSubmitEditing ={(value) => props.onSubmit(value)}
                 />
                 {
                     props.isTyping?

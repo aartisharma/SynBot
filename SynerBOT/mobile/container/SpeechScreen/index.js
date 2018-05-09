@@ -8,19 +8,6 @@ class SpeechScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            messages:{
-                userID: 1,
-                content:
-                    {
-                        answer: "",
-                        details: "",
-                        intent: "",
-                        response_code: "",
-                        utterance: ""
-                     }
-            }
-        }
        this.suggestSiblingAction = this.suggestSiblingAction.bind(this);
     }
 
@@ -28,43 +15,39 @@ class SpeechScreen extends React.Component {
     {
         this.props.speechResultsAction.loadPreviousMessages()
         this.timer = setTimeout(() => {
-            this.setState({ messages:{
+            var messages= {
+                userID: 1,
+                content:
+                    {
+                        answer: "Hello! I am SynBot",
+                        details: "",
+                        intent: "definition",
+                        response_code: "ontology_response_code",
+                        utterance: ""
+                    }
+            }
+            // do something with new state
+            var messageArray = this.props.speechResults.message;
+            this.props.speechResultsAction.updateMessageContainer(messages,messageArray)
+
+            this.timer = setTimeout(() => {
+                messages={
                     userID: 1,
                     content:
                         {
-                            answer: "Hello! I am SynBot",
+                            answer: "What can I help you with?",
                             details: "",
                             intent: "definition",
                             response_code: "ontology_response_code",
                             utterance: ""
-                         }
-
-                }}, function() {
+                        }
+                }
                 // do something with new state
                 var messageArray = this.props.speechResults.message;
-                this.props.speechResultsAction.updateMessageContainer(this.state.messages,messageArray)
-
-                this.timer = setTimeout(() => {
-                    this.setState({ messages:{
-                            userID: 1,
-                            content:
-                                {
-                                    answer: "What can I help you with?",
-                                    details: "",
-                                    intent: "definition",
-                                    response_code: "ontology_response_code",
-                                    utterance: ""
-                                   }
-                        }}, function() {
-                        // do something with new state
-                        var messageArray = this.props.speechResults.message;
-                        this.props.speechResultsAction.updateMessageContainer(this.state.messages,messageArray)
-                    });
-                }, 2000);
-
-            });
+                this.props.speechResultsAction.updateMessageContainer(messages,messageArray)
+            }, 2000);
         }, 5000);
-      }
+    }
 
     suggestSiblingAction(item) {
         var messageArray = this.props.speechResults.message;
@@ -76,7 +59,6 @@ class SpeechScreen extends React.Component {
   render() {
         return(
             <SpeechScreenCompo
-               // onVoiceStart ={this.onVoiceStart}
                 message = {this.props.speechResults.message}
                 suggestSiblingAction = {this.suggestSiblingAction}
                />

@@ -1,7 +1,5 @@
 import React from 'react';
 import {StyleSheet, Image, View, TouchableOpacity, TextInput,Text,FlatList,KeyboardAvoidingView} from 'react-native';
-import microphone from '../../../common/images/microphone.png'
-import soundWave from '../../../common/images/sound1.gif'
 import Bubble from '../../../common/component/Bubble'
 import ChatTextInput from '../../container/ChatTextInput'
 

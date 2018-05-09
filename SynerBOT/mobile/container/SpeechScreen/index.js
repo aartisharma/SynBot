@@ -271,26 +271,29 @@ class SpeechScreen extends React.Component {
 
     onSend() {
         window.clearTimeout(this.timer);
-        this.setState({ messages:{
-                userID: 2,
-                 content:
-                     {
-                         answer: this.state.text,
-                         details: "",
-                         intent: "definition",
-                         response_code: "",
-                         utterance: ""
-                     }
-            }
-            }, function() {
-             var messageArray = this.props.speechResults.message;
-             this.props.speechResultsAction.updateMessageContainer(this.state.messages, messageArray)
-             //API call
-             this.props.speechResultsAction.sendTextCall(this.state.text, messageArray);
-             this.setState(()=> ({
-                 text: "",
-             }))
-        });
+        if(this.state.text !="") {
+            this.setState({
+                messages: {
+                    userID: 2,
+                    content:
+                        {
+                            answer: this.state.text,
+                            details: "",
+                            intent: "definition",
+                            response_code: "",
+                            utterance: ""
+                        }
+                }
+            }, function () {
+                var messageArray = this.props.speechResults.message;
+                this.props.speechResultsAction.updateMessageContainer(this.state.messages, messageArray)
+                //API call
+                this.props.speechResultsAction.sendTextCall(this.state.text, messageArray);
+                this.setState(() => ({
+                    text: "",
+                }))
+            });
+        }
      }
 
     onSubmit(){

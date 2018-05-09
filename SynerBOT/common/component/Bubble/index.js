@@ -9,6 +9,7 @@ import AreaCapabilityBubbleComponent from '../../../common/component/BubbleCompo
 import DefaultBubble from '../../../common/component/BubbleComponents/DefaultBubble';
 
 const Bubble = ({item,suggestSiblingAction}) => {
+    console.log("performance Issue ------>>>>>");
     return (
         item.userID == 1?
           <View>

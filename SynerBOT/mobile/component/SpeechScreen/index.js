@@ -3,6 +3,7 @@ import {StyleSheet, Image, View, TouchableOpacity, TextInput,Text,FlatList,Keybo
 import microphone from '../../../common/images/microphone.png'
 import soundWave from '../../../common/images/sound1.gif'
 import Bubble from '../../../common/component/Bubble'
+import ChatTextInput from '../../container/ChatTextInput'
 
 const SpeechScreen = (props) => {
 
@@ -26,35 +27,7 @@ const SpeechScreen = (props) => {
             </View>
 
             <View style = {styles.messageContainerStyle}>
-                <TextInput
-                    style = {styles.messageTextFieldStyle}
-                    onChangeText={(value) => props.onMessageChange(value)}
-                    onFocus={(value) => props.onTextInputFocus(value)}
-                    autoCorrect = {false}
-                    multiline={true}
-                    value={props.text}
-                    returnKeyType="done"
-                    blurOnSubmit={true}
-                    autoCapitalize= "none"
-                    onSubmitEditing ={(value) => props.onSubmit(value)}
-                />
-                {
-                    props.isTyping?
-                        <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onSend}
-                                          onLongPress={props.onStartSpeech}>
-                            <Text>Send</Text>
-                            </TouchableOpacity> : props.isListening ?
-                         <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onVoiceStart}
-                                          onLongPress={props.onStartSpeech}>
-                            <Image style={styles.sendButtonImage}
-                                   source={soundWave}
-                            /></TouchableOpacity> :
-                        <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onVoiceStart}
-                                                                     onLongPress={props.onStartSpeech}>
-                            <Image style={styles.sendButtonImage}
-                                   source={microphone}
-                            /></TouchableOpacity>
-                }
+                <ChatTextInput/>
             </View>
         </View>
         </KeyboardAvoidingView>

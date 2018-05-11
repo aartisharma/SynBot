@@ -35,12 +35,14 @@ class SpeechScreen extends React.Component {
         }
 
         this.onMessageChange = this.onMessageChange.bind(this);
+        this.onPressAnyWhere = this.onPressAnyWhere.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onTextInputFocus = this.onTextInputFocus.bind(this);
         this.onSend = this.onSend.bind(this);
         this.onVoiceStart = this.onVoiceStart.bind(this);
         this.onStartSpeech = this.onStartSpeech.bind(this);
         this.suggestSiblingAction = this.suggestSiblingAction.bind(this);
+        this.onEditQuestionSent = this.onEditQuestionSent.bind(this);
         Voice.onSpeechStart = this.onSpeechStart.bind(this);
         Voice.onSpeechRecognized = this.onSpeechRecognized.bind(this);
         Voice.onSpeechEnd = this.onSpeechEnd.bind(this);
@@ -95,7 +97,7 @@ class SpeechScreen extends React.Component {
         console.log(e.value)
         this.timeoutHandle = setTimeout(() => {
             this._cancelRecognizing()
-            this.props.speechResultsAction.onListeningStop()
+           //this.props.speechResultsAction.onListeningStatusChanged(false)
              console.log("time out result" + e.value[0])
                         //Voice.stop()
                         this._cancelRecognizing()
@@ -112,7 +114,7 @@ class SpeechScreen extends React.Component {
                                     }
                             }
                         }, function() {
-                            this.props.speechResultsAction.onListeningStop()
+                           this.props.speechResultsAction.onListeningStatusChanged(false)
                              var messageArray = this.props.speechResults.message;
                             this.props.speechResultsAction.updateMessageContainer(this.state.messages, messageArray)
                             //API call
@@ -304,6 +306,16 @@ class SpeechScreen extends React.Component {
         console.log("longPress")
      }
 
+    onEditQuestionSent(value){
+        this.setState(() => ({
+            text:value,
+        }))
+
+    }
+
+    onPressAnyWhere(){
+
+    }
   render() {
         return(
             <SpeechScreenCompo
@@ -314,10 +326,12 @@ class SpeechScreen extends React.Component {
                 onVoiceStart ={this.onVoiceStart}
                 message = {this.props.speechResults.message}
                 suggestSiblingAction = {this.suggestSiblingAction}
+                onEditQuestionSent = {this.onEditQuestionSent}
                 onStartSpeech = {this.onStartSpeech}
                 isListening = {this.state.isListening}
                 isTyping = {this.state.isTyping}
                 onSubmit = {this.onSubmit}
+                onPressAnyWhere={this.onPressAnyWhere}
             />
         )
     }

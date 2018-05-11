@@ -7,6 +7,7 @@ import Bubble from '../../../common/component/Bubble'
 const SpeechScreen = (props) => {
 
     return (
+
         <KeyboardAvoidingView
             style={styles.container}
             behavior="padding"
@@ -16,11 +17,13 @@ const SpeechScreen = (props) => {
                 <FlatList style = {{width:'100%',height:'75%', backgroundColor:'#f7f7f7'}}
                           inverted
                           data={props.message}
+                          keyboardShouldPersistTaps='always'
                           renderItem={({item}) =>
                               <Bubble
                                   item = {item}
                                   props = {this.props}
                                   suggestSiblingAction = {props.suggestSiblingAction}
+                                  onEditQuestionSent ={props.onEditQuestionSent}
                               />
                           }/>
             </View>
@@ -39,10 +42,14 @@ const SpeechScreen = (props) => {
                     onSubmitEditing ={(value) => props.onSubmit(value)}
                 />
                 {
-                    props.isTyping?
+                    props.text != "" && !props.isListening?
                         <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onSend}
                                           onLongPress={props.onStartSpeech}>
-                            <Text>Send</Text>
+                            <Text style ={{color:'#007aff',fontSize:45}}>&#x27A3;</Text>
+                        </TouchableOpacity>: props.isTyping?
+                        <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onSend}
+                                          onLongPress={props.onStartSpeech}>
+                            <Text style ={{color:'#007aff',fontSize:45}}>&#x27A3;</Text>
                             </TouchableOpacity> : props.isListening ?
                          <TouchableOpacity style={styles.sendButtonStyle} onPress={props.onVoiceStart}
                                           onLongPress={props.onStartSpeech}>
@@ -107,7 +114,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height:'100%',
         width:'30%',
-        backgroundColor:'white',
+        backgroundColor:'transparent',
     },
     sendButtonTextStyle:{
         color:'blue',

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, TextInput,Text} from 'react-native';
+import {StyleSheet, View, TextInput,Text,TouchableOpacity,Image} from 'react-native';
 
 import ScrollViewCompBubble from '../../../common/component/BubbleComponents/ScrollViewCompBubble';
 import ButtonCompBubble from '../../../common/component/BubbleComponents/ButtonCompBubble';
@@ -7,8 +7,9 @@ import SingleLineCompBubble from '../../../common/component/BubbleComponents/Sin
 import CapabilityBubbleComponent from '../../../common/component/BubbleComponents/CapabilityBubbleComponent';
 import AreaCapabilityBubbleComponent from '../../../common/component/BubbleComponents/AreaCapabilityBubbleComponent';
 import DefaultBubble from '../../../common/component/BubbleComponents/DefaultBubble';
+import editButton from '../../../common/images/edit.png';
 
-const Bubble = ({item,suggestSiblingAction}) => {
+const Bubble = ({item,suggestSiblingAction,onEditQuestionSent}) => {
     return (
         item.userID == 1?
           <View>
@@ -58,11 +59,21 @@ const Bubble = ({item,suggestSiblingAction}) => {
                     <View style={styles.senderBubbleContainerStyle}>
                         {
                             item.content.intent == "definition"?
+
                                 <Text style={{fontSize: 14}}>
                                     {item.content.answer}
                                 </Text> :
                                 null
                         }
+                    </View>
+                    <View style={{ flex: -1,
+                        justifyContent:'center'}}>
+                        <TouchableOpacity onPress={() => onEditQuestionSent(item.content.answer)}>
+                            {/*<Image style={{width:20,height:20}}*/}
+                                   {/*source={editButton}*/}
+                            {/*/>*/}
+                            <Text style = {{fontSize:25,color:'#007aff',transform: [{ rotate: '90deg'}]}}>&#9998;</Text>
+                            </TouchableOpacity>
                     </View>
                 </View>
             </View>

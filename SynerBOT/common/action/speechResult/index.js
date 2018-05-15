@@ -36,7 +36,8 @@ export const receivedResponseUpdateMessageContainer = () => {
                 console.log("data saved")
                 getConversationData().then(userData => {
                     if (userData) {
-                        dispatch({
+                        messageArray = messageArray.slice(0,20)
+                            dispatch({
                             type: Constant.SPEECH_FILTERED_KEYWORDS,
                             payload: {
                                 message: messageArray
@@ -59,6 +60,7 @@ export const updateMessageContainer = (object,messageArray) => {
         console.log(result)
         if(object)
         messageArray.unshift(object)
+        messageArray = messageArray.slice(0,20)
         console.log(object);
         if (object) {
             dispatch({

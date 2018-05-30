@@ -303,6 +303,20 @@
 			remoteGlobalIDString = F60690131CA2766F0003FB26;
 			remoteInfo = RealmReact;
 		};
+		7EBAEAB820B537DA0039CF1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BDC1FC498900052F4D5;
+			remoteInfo = jsinspector;
+		};
+		7EBAEABA20B537DA0039CF1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BFA1FC4989A0052F4D5;
+			remoteInfo = "jsinspector-tvOS";
+		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
@@ -516,6 +530,8 @@
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
+				7EBAEAB920B537DA0039CF1F /* libjsinspector.a */,
+				7EBAEABB20B537DA0039CF1F /* libjsinspector-tvOS.a */,
 				7E67507A20871DA500717EE9 /* libthird-party.a */,
 				7E67507C20871DA500717EE9 /* libthird-party.a */,
 				7E67507E20871DA500717EE9 /* libdouble-conversion.a */,
@@ -1069,6 +1085,20 @@
 			fileType = archive.ar;
 			path = libRealmReact.a;
 			remoteRef = 7E67508820871DA500717EE9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EBAEAB920B537DA0039CF1F /* libjsinspector.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsinspector.a;
+			remoteRef = 7EBAEAB820B537DA0039CF1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EBAEABB20B537DA0039CF1F /* libjsinspector-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsinspector-tvOS.a";
+			remoteRef = 7EBAEABA20B537DA0039CF1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {

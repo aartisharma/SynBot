@@ -19,7 +19,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                         width:'100%'
                                     }}>
                                         {
-                                            item.content.answer.map((data) => {
+                                            item.content.answer.map((data, index) => {
                                                 return (
                                                     <View>
                                                         <View style={{
@@ -38,6 +38,7 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                                                     borderBottomRightRadius: 19,
                                                                     margin: 1
                                                                 }}
+                                                                            listKey = {index}
                                                                           data={data}
                                                                           renderItem={({item}) =>
                                                                               <CapabilityDetailedcomp

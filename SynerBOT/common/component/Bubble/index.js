@@ -9,7 +9,7 @@ import AreaCapabilityBubbleComponent from '../../../common/component/BubbleCompo
 import DefaultBubble from '../../../common/component/BubbleComponents/DefaultBubble';
 import editButton from '../../../common/images/edit.png';
 
-const Bubble = ({item,suggestSiblingAction,onEditQuestionSent}) => {
+const Bubble = ({item,suggestSiblingAction,onEditQuestionSent, navigation}) => {
     return (
         item.userID == 1?
           <View>
@@ -44,7 +44,8 @@ const Bubble = ({item,suggestSiblingAction,onEditQuestionSent}) => {
                                                           suggestSiblingAction = {suggestSiblingAction}/>
                                        :<CapabilityBubbleComponent
                                             item = {item}
-                                            suggestSiblingAction = {suggestSiblingAction}/>
+                                            suggestSiblingAction = {suggestSiblingAction}
+                                            navigation={navigation}/>
                                         :item.content.intent == "area_capability"||item.content.intent == "comparison"?
                                     <AreaCapabilityBubbleComponent
                                         item = {item}/>:null

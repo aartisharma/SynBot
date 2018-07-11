@@ -332,6 +332,7 @@ class SpeechScreen extends React.Component {
                 isTyping = {this.state.isTyping}
                 onSubmit = {this.onSubmit}
                 onPressAnyWhere={this.onPressAnyWhere}
+                navigation = {this.props.navigation}
             />
         )
     }

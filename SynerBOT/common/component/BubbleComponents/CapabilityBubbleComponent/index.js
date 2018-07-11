@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View,FlatList} from 'react-native';
-import CapabilityDetailedcomp from "../../../../common/component/BubbleComponents/CapabilityDetailedcomp"
-const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
+import CapabilityDetailedContainer from "../../../../common/Container/CapabilityDetailedContainer"
+const CapabilityBubbleComponent = ({item,suggestSiblingAction,navigation}) => {
     return (
 
         <View style={styles.receiverBubbleBackgroundContainerStyle}>
@@ -41,8 +41,9 @@ const CapabilityBubbleComponent = ({item,suggestSiblingAction}) => {
                                                                             listKey = {index}
                                                                           data={data}
                                                                           renderItem={({item}) =>
-                                                                              <CapabilityDetailedcomp
-                                                                                  item={item}/>
+                                                                              <CapabilityDetailedContainer
+                                                                                  item={item}
+                                                                                  navigation={navigation}/>
                                                                           }/>
                                                     </View>
                                                 )

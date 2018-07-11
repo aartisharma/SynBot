@@ -24,6 +24,7 @@ const SpeechScreen = (props) => {
                                   props = {this.props}
                                   suggestSiblingAction = {props.suggestSiblingAction}
                                   onEditQuestionSent ={props.onEditQuestionSent}
+                                  navigation = {props.navigation}
                               />
                           }/>
             </View>

@@ -57,6 +57,7 @@ class LoginScreen extends React.Component {
                 onLoginDone={this.onLoginDone}
                 error={this.state.error}
                 loading={this.state.loading}
+                navigation = {this.props.navigation}
             />
         )
     }
@@ -64,7 +65,7 @@ class LoginScreen extends React.Component {
 
 const mapStateToProps = state => ({
     auth: state.auth,
-    loading: state.loading
+    loading: state.loading,
 });
 
 const mapDispatchToProps = dispatch => ({

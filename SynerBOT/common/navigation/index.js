@@ -5,15 +5,28 @@ import VideoScreenContainer from '../../mobile/container/VideoScreenContainer';
 
 const InitialStack = StackNavigator({
     login: {
-        screen: LoginScreen
+        screen: LoginScreen,
+        navigationOptions: () => ({
+            title: `SynerBOT `,
+            headerBackTitle: `Login`
+        }),
     },
     speech: {
-        screen: SpeechScreen
+        screen: SpeechScreen,
+        navigationOptions: () => ({
+            title: `May I Help You ! `,
+            headerBackTitle: `Back`
+        }),
     },
-    video:{
-        screen:VideoScreenContainer
-    }
+    video: {
+        screen: VideoScreenContainer,
+        navigationOptions: () => ({
+            title: `Video `,
+            headerBackTitle:null
+        }),
 
-},);
+    },
+
+}, {headerMode: 'float'});
 
 export default InitialStack;

@@ -14,6 +14,6 @@ const InitialStack = StackNavigator({
         screen:VideoScreenContainer
     }
 
-}, {headerMode: 'none'});
+},);
 
 export default InitialStack;

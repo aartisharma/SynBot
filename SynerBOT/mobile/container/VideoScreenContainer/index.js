@@ -3,12 +3,15 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import VideoScreenComponent from '../../component/VideoScreenComponent'
 import * as speechResultsActionCreator from '../../../common/action/speechResult';
+import speechResult from "../../../common/reducer/speechResult";
 class VideoScreenContainer extends React.Component {
 
     constructor(props) {
         super(props);
-
-    }
+        this.state = {
+            player:{},
+        }
+       }
 
     componentWillReceiveProps(nextProps) {
 
@@ -19,10 +22,12 @@ class VideoScreenContainer extends React.Component {
 
     }
 
+
     render() {
         return(
             <VideoScreenComponent
-
+                videoItem = {this.props.speechResults.selectedVideo.videoItem}
+                player = {this.state.player}
             />
         )
     }

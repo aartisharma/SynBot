@@ -7,7 +7,8 @@ const initialState = {
     receivedData:"",
     audioSpeech: [],
     isVoiceListening:false,
-    isTyping:false
+    isTyping:false,
+    selectedVideo:{}
 };
 
 export default createReducer(initialState, {
@@ -25,5 +26,8 @@ export default createReducer(initialState, {
     }),
     [Constant.LISTENING_VOICE]: (state, payload) => Object.assign({}, state, {
         //isVoiceListening:payload.isVoiceListening
+    }),
+    [Constant.SELECTED_VIDEO_ITEM]: (state, payload) => Object.assign({}, state, {
+        selectedVideo:payload
     })
 });

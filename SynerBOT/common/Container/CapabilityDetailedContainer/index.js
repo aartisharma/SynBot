@@ -12,9 +12,12 @@ class CapabilityDetailedContainer extends React.Component {
         this.openVideo = this.openVideo.bind(this)
     }
 
-    openVideo(){
+    openVideo(item){
+
+    console.log('value is', item)
+        this.props.speechResultsAction.onSelectVideo(item);
         this.props.navigation.navigate('video')
-    }
+}
 
     render() {
         return(

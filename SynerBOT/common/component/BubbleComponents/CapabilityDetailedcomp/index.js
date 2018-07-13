@@ -11,7 +11,7 @@ const CapabilityDetailedcomp = (props) => {
             {
                 props.item.type.toLowerCase() === 'videos'?
                 <View style={{flexDirection:'row'}}>
-            <TouchableOpacity style={styles.docxIconStyle} onPress={props.openVideo}>
+            <TouchableOpacity style={styles.docxIconStyle} onPress={() =>props.openVideo(props.item)}>
                 <Image style={{width:35,height:35}} source={ props.item.type.toLowerCase() == 'experience reports'?docxIcon:props.item.type.toLowerCase() === 'videos'?videoIcon:explorerIcon} />
             </TouchableOpacity>
             <TouchableOpacity style={{fontSize:15,fontWeight:'bold',paddingLeft:10,paddingTop:10, width:'85%'}} onPress={() => Linking.openURL(props.item.url)}>

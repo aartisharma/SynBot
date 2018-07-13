@@ -127,5 +127,16 @@ export const onListeningStatusChanged = (listeningStatus) => {
                 }
             });
         }
+}
+
+export const onSelectVideo = (itemValue) => {
+    return(dispatch,getState) =>{
+        dispatch({
+            type: Constant.SELECTED_VIDEO_ITEM,
+            payload: {
+                videoItem:itemValue
+            }
+        });
     }
+}
 

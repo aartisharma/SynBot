@@ -10,5 +10,6 @@ export default createConstants(
     'LISTENING_VOICE',
     'USER_INFO_ERROR',
     'USER_INFO_SUCCESS',
-    'RESET_UI'
+    'RESET_UI',
+    'SELECTED_VIDEO_ITEM'
 );
